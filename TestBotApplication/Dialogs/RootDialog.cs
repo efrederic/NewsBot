@@ -33,7 +33,8 @@ namespace TestBotApplication.Dialogs {
 
             var articlesResult = await MessagesController.NewsApiClient.GetTopHeadlinesAsync(new TopHeadlinesRequest {
                 Q = userInput,
-                PageSize = numResults
+                PageSize = numResults,
+                Language = Languages.EN
             });
 
             if (articlesResult.Status == Statuses.Ok) {
